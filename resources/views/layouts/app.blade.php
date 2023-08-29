@@ -18,7 +18,7 @@
                 </h1>
 
                 {{--
-                    Una manera de mostar siel usuario esta autenticado
+                    Una manera de mostar si el usuario esta autenticado
                     @if (auth()->user())
                     <p>Autenticado</p>
                 @else
