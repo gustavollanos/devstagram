@@ -46,7 +46,6 @@ class PerfilController extends Controller
 
         // Guardar cambios
         $usuario = User::find(auth()->user()->id);
-
                 
         if(!$request->password_c == '')
         {
@@ -59,12 +58,11 @@ class PerfilController extends Controller
                     $usuario->email = $request->email;
                     $usuario->imagen = $nombreImagen ?? auth()->user()->imagen ?? null;
                     $usuario->save();
-                    //return redirect()->route('posts.index', auth()->user()->username);
+                    //Redireccionar
                     return redirect()->route('posts.index', $usuario->username);
                 }
                 return back()->with('mensaje', 'Credenciales nuevas no coinciden'); 
-    
-                
+                    
             }
                 return back()->with('mensaje', 'Credenciales Incorrectas');
                 //dd('Credenciales incorrectas');
