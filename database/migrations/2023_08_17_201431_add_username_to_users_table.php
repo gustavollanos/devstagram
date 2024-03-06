@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
+            //unique() para que el registro sea unico en la bd y no se repita
             $table->string('username')->unique();
         });
     }

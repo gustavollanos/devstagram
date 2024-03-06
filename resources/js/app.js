@@ -12,7 +12,7 @@ const dropzone = new Dropzone('#dropzone', {
     init: function (){
         if(document.querySelector('[name="imagen"]').value.trim()){
             const imagenPublicada = {}
-            imagenPublicada.size = 1234;
+            imagenPublicada.size = 1234; //este valor no importa
             imagenPublicada.name = document.querySelector('[name="imagen"]').value;
 
             this.options.addedfile.call(this, imagenPublicada);
