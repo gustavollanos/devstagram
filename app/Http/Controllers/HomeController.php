@@ -15,6 +15,7 @@ class HomeController extends Controller
     public function __invoke()
     {
         // Obtener a quienes seguimos
+        //pluck trae solo los campos que necesitamos
         $ids = auth()->user()->followings->pluck('id')->toArray();
         $posts = Post::whereIn('user_id', $ids)->latest()->paginate(20);
       
